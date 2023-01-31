@@ -6,7 +6,7 @@ a{text-decoration:none}
 
 .btn-grad {
 background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
-margin: 10px;
+margin: 1px;
 height:30px;
 width:15%;
 text-transform: uppercase;
