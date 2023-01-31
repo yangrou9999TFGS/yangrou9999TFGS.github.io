@@ -4,6 +4,8 @@
 
 a{text-decoration:none}
 
+a:hover{text-decoration:underline;}
+
 .btn-grad {
 background-image: linear-gradient(to right, #603813 0%, #b29f94  51%, #603813  100%);
 margin: 1px;
