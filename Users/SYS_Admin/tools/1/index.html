@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>文件读取机</title>
+<link href="https://aerfaying.com/Content/logo.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<h1><div class="box">请稍等</div></h1>
+<br>
+<script>
+function getTime() {
+var date = new Date();
+var year = date.getFullYear(); 
+var month = date.getMonth() + 1; 
+var day = date.getDate(); 
+var hour = date.getHours(); 
+hour = hour < 10 ? '0' + hour : hour;
+var minute = date.getMinutes(); 
+minute = minute < 10 ? '0' + minute : minute;
+var seconds = date.getSeconds();
+seconds = seconds < 10 ? '0' + seconds : seconds;
+return year + '/' + month + '/' + day + '&nbsp;' + hour + ':' + minute + ':' + seconds + '&nbsp;欢迎使用文件读取机！';
+}
+setInterval(function() {
+document.querySelector('.box').innerHTML = getTime();
+}, 1000)
+</script>
+<style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><style class="darkreader darkreader--root-vars" media="screen"></style><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html {
+    color-scheme: dark !important;
+}
+html, body {
+    background-color: #181a1b;
+}
+html, body {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #404400 !important;
+    color: #e8e6e3 !important;
+}
+::-webkit-scrollbar {
+    background-color: #202324;
+    color: #aba499;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #454a4d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #575e62;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #484e51;
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+<meta name="darkreader" content="7ee2200e9ff24875ad112f8dc66911e9"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}
+#edge-translate-panel-body,
+.MuiTypography-body1,
+.nfe-quote-text {
+    color: var(--darkreader-neutral-text) !important;
+}
+gr-main-header {
+    background-color: #0f3a48 !important;
+}
+.tou-z65h9k,
+.tou-mignzq,
+.tou-1b6i2ox,
+.tou-lnqlqk {
+    background-color: var(--darkreader-neutral-background) !important;
+}
+.tou-75mvi {
+    background-color: #032029 !important;
+}
+.tou-ta9e87,
+.tou-1w3fhi0,
+.tou-1b8t2us,
+.tou-py7lfi,
+.tou-1lpmd9d,
+.tou-1frrtv8,
+.tou-17ezmgn {
+    background-color: #0a0a0a !important;
+}
+.tou-uknfeu {
+    background-color: #231603 !important;
+}
+.tou-6i3zyv {
+    background-color: #19576c !important;
+}
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }
+embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast(90%); }</style>
+</head>
+
+ 
+<body>
+
+
+<h1>文档查看器（容易乱码）</h1>
+<script>
+function show()
+{
+    var reader = new FileReader();
+    reader.onload = function() 
+    {
+        //alert(this.result)
+        story.value=this.result
+    }
+    var f = document.getElementById("filePicker").files[0];
+    reader.readAsText(f);
+}
+</script>
+ <input type="file" name="file" id="filePicker" onchange="show()"  />
+<br>
+ <textarea id="story" name="story" rows="30" cols="150">
+</textarea>
+<hr>
+<h1>图像查看器</h1>
+<input type="file" id="selectFiles" onchange="dealSelectFiles()" >
+    <canvas id="myCanvas" width=1440 height=362></canvas>
+<script>
+        var imgPosX = 725;
+        var imgWidth = 181;
+        function dealSelectFiles(){
+            // get select files.
+            var selectFiles = document.getElementById("selectFiles").files;
+  
+            for(var file of selectFiles){
+                console.log(file.webkitRelativePath);
+                // read file content.
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = function(){
+                    // deal data.
+                    var img = new Image();
+                    // after loader, result storage the file content result.
+                    img.src = this.result;  
+                    img.onload = function(){
+                        var myCanvas = document.getElementById("myCanvas");
+                        var cxt = myCanvas.getContext('2d');
+                        cxt.drawImage(img, imgPosX, 0);
+                        imgPosX += imgWidth;
+                    }
+                }
+            }
+        }
+    </script>
+<hr>
+<h1>图像查看器（拖动查看）</h1>
+         <style type="text/css">
+             #area{width:100%;height:200px; line-height: 200px; text-align: center; border: 1px solid #DDDDDD;}
+             #prev{width:100%;min-height: 400px; border: 1px solid #FF0000;}
+         </style>
+     </head>
+     <body>
+         <div id="area">将图片拖放到该区域</div>
+         <h1>图片预览</h1>
+
+         <div id="prev"></div>
+     </body>
+ 
+   <script>
+     window.onload = function(){
+         var oArea = document.getElementById("area");
+         var oPrev = document.getElementById("prev");
+         
+         oArea.ondragenter = function(){
+             oArea.innerHTML = "请释放鼠标";
+         }
+         oArea.ondragleave = function(){
+             oArea.innerHTML = "将图片拖放到该区域";
+         }
+         oArea.ondragover = function(ev){
+             ev.preventDefault();
+         }
+         oArea.ondrop = function(ev){
+             ev.preventDefault();
+             var files = ev.dataTransfer.files;
+             for(var i = 0 , len = files.length;i<len;i++){
+                 var file = files[i];
+                 var reader = new FileReader();
+                 reader.readAsDataURL(file);
+                 (function(reader){
+                     reader.onload = function(){
+                         var oImg = document.createElement("img");
+                         oImg.src = this.result;
+                         oPrev.appendChild(oImg);
+                     }
+                 })(reader);
+                 
+             }
+             
+         }
+         
+     }
+   </script>
+<br>
+<hr>
+<h1 align="center">感谢使用</h1>
+<h3 align="center"><a href="https://aerfaying.com/users/1255084" target="_blank">A营的Sys_Admin</a></h3>
+</body>
+</html>
