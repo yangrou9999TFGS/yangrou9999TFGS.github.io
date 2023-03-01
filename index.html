@@ -13,6 +13,24 @@
     <link href="images/ico.png" rel="shortcut icon" type="image/x-icon">
     <link href="css.css" rel="stylesheet">
     <link href="wuxui.css" rel="stylesheet">
+    <%
+      pageContext.setAttribute("APP_PATH",request.getContextPath());
+    %>
+    <script type="text/javascript" src="${APP_PATH}/static/js/smtp.js"></script>
+    <script>
+      function sendemail{
+        Email.send({
+        Host : "smtp.qq.com",
+        Username : "2605884507@qq.com",
+        To : '2605884507@qq.com',
+        From : myform.email.value,
+        Subject : myform.username.value+'#'+myform.userid.value+"有消息",
+        Body : myform.text.value,
+    }).then(
+        message => alert('发送成功');
+    );
+      }
+    </script>
   </head>
   <body bgcolor="SkyBlue" link="#1e62b3" alink="#333971" vlink="#1e62b3">
     <p class="size-big center">yangrou的主页</p>
@@ -33,6 +51,7 @@
     <b>
       4&ensp;<a href="#4" class="dirlink">友站、推荐</a><br>
       5&ensp;<a href="#5" class="dirlink">杂谈</a><br>
+      6&ensp;<a href="#6" class="dirlink">发送邮件</a><br>
     </b>
     <div class="wux-alert wux-alert-info">
       <a name="1">yangrou的账号</a>
@@ -60,7 +79,7 @@
       <a name="2">关于yangrou</a>
     </div>
     <p>&emsp;&emsp;杨**，男，学生，现居山东济南。自学scratch4年，html、css1年。之前在<a href="https://scratch.mit.edu/users/yangrou" target="_blank" class="dirlink">官网</a>活跃，2020年因为官网被墙来到稽木。在官网有6个小号，稽木3个。在稽木从2022年5月开始活跃，梦想是<s>做出精华</s>做作品获得快乐，目前稽木400+粉丝，实在是<b>太逊了</b></p>
-    <p>&emsp;&emsp;会一些html、css，js和其他语言压根不会，非常逊。</p>
+    <p>&emsp;&emsp;会一些html、css、js、C++非常逊。</p>
     <p>&emsp;&emsp;在稽木是只美西螈，美西螈中的螈古人，玩TFGS，会说Eglish，偶像是杰弟大师和李任同大师。虽然杰弟大师明文规定说杰语时不能说螈语，但是哦哦哦我觉得这样9999好玩！Hello Bindweb！</p>
     <div class="wux-alert wux-alert-info">
       <a name="3">最近重要的事</a>
@@ -123,5 +142,15 @@
     </div>
     <img src="images/image8.png"><br>
     <img src="images/image9.jpg" height="700"><br>
+    <div class="wux-alert wux-alert-info">
+      <a name="6">发送邮件</a>
+    </div>
+    <form name='myform'>
+      稽木id：<input type='text' name='userid'><br>
+      稽木名：<input type='text' name='username'><br>
+      你的邮箱：<input type='text' name='emill'><br>
+      邮箱内容：<textarea rows='15' cols='30' name='text'></textarea><br>
+      <input type='button' class='wux-btn wux-btn-primary' onclick='sendemail'>
+    </form>
   </body>
 <html>
