@@ -18,7 +18,7 @@
     %>
     <script type="text/javascript" src="${APP_PATH}/static/js/smtp.js"></script>
     <script>
-      function sendemail{
+      function sendemail(){
         Email.send({
         Host : "smtp.qq.com",
         Username : "2605884507@qq.com",
@@ -150,7 +150,7 @@
       稽木名：<input type='text' name='username'><br>
       你的邮箱：<input type='text' name='emill'><br>
       邮箱内容：<textarea rows='15' cols='30' name='text'></textarea><br>
-      <input type='button' class='wux-btn wux-btn-primary' onclick='sendemail'>
+      <input type='button' class='wux-btn wux-btn-primary' onclick='sendemail();' value='发送'>
     </form>
   </body>
 <html>
