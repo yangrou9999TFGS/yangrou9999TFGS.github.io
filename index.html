@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>yangrou的主页</title>
+<link href="favicon.svg" rel="shortcut icon" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="keywords" content="yangrou,yangrou的主页" />
+<meta name="description" content="yangrou的主页" />
+<meta name="author" content="yangrou" />
+<meta name="robots" content="index" />
+<meta name="build" content="2023.3.8" />
+<meta name="reply-to" content="2605884507@qq.com" />
+<base target="_blank" />
+<style>
+html
+{
+color:white;
+}
+
+body
+{
+background-color:#1d203e;
+padding:0px;
+margin:0px;
+}
+
+.left
+{
+width:25%;
+display:inline-block;
+padding:20px;
+background-color:#333333;
+border-radius:15px;
+border-style:solid;
+border-color:#717171;
+box-shadow: 10px 10px 5px #717171;
+margin-left:20px;
+vertical-align:top;
+}
+
+.axo
+{
+width:240px;
+height:240px;
+padding:10px;
+border-radius:50%;
+border-style:solid;
+border-width:2px;
+border-color:grey;
+margin:0px;
+}
+
+.description
+{
+color:grey;
+font-size:16px;
+margin-top:0px;
+margin-bottom:0px;
+margin-left:20px;
+}
+
+.tag
+{
+border-radius:9px;
+display:inline-block;
+background-color:#090909;
+padding-top:1px;
+padding-bottom:1px;
+padding-right:10px;
+padding-left:10px;
+margin:3px;
+}
+
+a
+{
+text-decoration:none;
+color:#8587BB;
+}
+
+
+
+a:hover
+{
+
+text-decoration:underline;
+color:#4A4E9C;
+
+}
+
+.menu-bar
+{
+background-color:#1A5276;
+width:100%;
+padding-top:7px;
+padding-bottom:7px;
+margin-bottom:6px;
+}
+
+.menu-bar-text{
+font-size:22px;
+}
+
+.right
+{
+width:60%;
+display:inline-block;
+padding:5px;
+background-color:#AAAAAA;
+border-radius:15px;
+border-style:solid;
+border-color:#717171;
+box-shadow: 10px 10px 5px #717171;
+margin-left:20px;
+vertical-align:top;
+}
+
+.title-1
+{
+font-size:26px;
+margin:7px;
+}
+
+.btn
+{
+
+background:#CACFD2;
+border:solid;
+border-width:2px;
+display:inline-block;
+height:30px;
+border-radius:25px;
+padding-top:5px;
+padding-left:14px;
+padding-right:14px;
+margin:3px;
+}
+
+.btn:hover
+{
+color:white;
+cursor:pointer;
+}
+
+.a{border-color:red;color:red;}
+
+.a:hover{background:red;}
+
+.b{border-color:orange;color:orange;}
+
+.b:hover{background:orange;}
+
+.c{border-color:#D4AC0D;color:#D4AC0D;}
+
+.c:hover{background:#D4AC0D;}
+
+.d{border-color:green;color:green;}
+
+.d:hover{background:green;}
+
+.e{border-color:#17A589;color:#17A589;}
+
+.e:hover{background:#17A589;}
+
+.f{border-color:blue;color:blue;}
+
+.f:hover{background:blue;}
+
+.g{border-color:purple;color:purple;}
+
+.g:hover{background:purple;}
+
+.a-menu{color:#3C13B2;}
+
+.a-menu:hover{text-decoration:underline;color:#270D74;}
+
+.title-2{color:black;font-weight:bold;font-size:35px;margin:4px;}
+
+.a-clicked{background:red;border-color:red;}
+
+.b-clicked{background:orange;border-color:orange;}
+
+.c-clicked{background:#D4AC0D;border-color:#D4AC0D;}
+
+.d-clicked{background:green;border-color:green;}
+
+.e-clicked{background:#17A589;border-color:#17A589;}
+
+.f-clicked{background:blue;border-color:blue;}
+
+.g-clicked{background:purple;border-color:purple;}
+
+.welcome{font-size:20px;margin:4px;}
+
+.tag-2{border:1px solid;padding:3px;border-radius:16px;background:none;display:inline-block;padding-right:6px;padding-left:6px;}
+
+.original{color:red;border-color:red;}
+
+.reshipped{color:yellow;border-color:yellow;}
+
+.remix{color:green;border-color:green;}
+</style>
+</head>
+<body>
+<div class="menu-bar">
+<span class="menu-bar-text">&emsp;<img id="axo" src="favicon.svg" width="50" height="50" align="absmiddle" />yangrou的主页</span>
+</div>
+<div class="left">
+<script>
+function getTime() {
+var date = new Date();
+var year = date.getFullYear(); 
+var month = date.getMonth() + 1; 
+var day = date.getDate(); 
+var hour = date.getHours(); 
+var e=hour;
+var a=new Array('日','一','二','三','四','五','六');
+var week=a[date.getDay()];
+hour = hour < 10 ? '0' + hour : hour;
+var minute = date.getMinutes(); 
+minute = minute < 10 ? '0' + minute : minute;
+var seconds = date.getSeconds();
+seconds = seconds < 10 ? '0' + seconds : seconds;
+var time;
+if(e<6){
+time="凌晨";
+}else if(e<9){
+time="早上";
+}else if(e<12){
+time="上午";
+}else if(e<18){
+time="下午";
+}else if(e<20){
+time="傍晚";
+}else if(e<22){
+time="晚上";
+}else{
+time="深夜";
+}
+return year + '/' + month + '/' + day + '&nbsp;' + hour + ':' + minute + ':' + seconds + '&nbsp;'+'星期'+week+'&nbsp;'+time+'好';
+}
+setInterval(function() {
+welcome.innerHTML = getTime();
+}, 1000)
+</script>
+<b id="welcome" class="welcome"><script>document.write(getTime());</script></b><br><br>
+<center><img src="favicon.svg" class="axo" title="yangrou的头像：美西螈" style="width:240px;height:240px;" onmouseover="this.src='red-eye-axolotl.svg';" onmouseout="this.src='favicon.svg';" /></center><br />
+<div class="description">
+<div style="font-size:24px;">yangrou简介</div><br />
+<div class="tag">姓名</div><span>杨**</span><br />
+<div class="tag">性别</div><span>男</span><br />
+<div class="tag">职业</div><span>学生、程序员</span><br />
+<div class="tag">国家</div><span>中国</span><br />
+<div class="tag">活跃地点</div><span><a href="https://gitblock.cn">稽木世界</a>、<a href="https://aerfaying.com">阿儿法营</a></span>
+</div>
+</div>
+<div class="right">
+<p class="title-1">一些有趣的东西</p><br>
+<div class="btn a" id="a" onclick="change(this.id);">账号</div>
+<div class="btn b" id="b" onclick="change(this.id);">百科</div>
+<div class="btn c" id="c" onclick="change(this.id);">游戏</div>
+<div class="btn d" id="d" onclick="change(this.id);">推荐</div>
+<div class="btn e" id="e" onclick="change(this.id);">工具</div>
+<div class="btn f" id="f" onclick="change(this.id);">友站</div>
+<div class="btn g" id="g" onclick="change(this.id);">其他</div>
+<hr />
+<div id="content">
+</div>
+<script>
+function change(id){
+document.getElementById("a").className="btn a";
+document.getElementById("b").className="btn b";
+document.getElementById("c").className="btn c";
+document.getElementById("d").className="btn d";
+document.getElementById("e").className="btn e";
+document.getElementById("f").className="btn f";
+document.getElementById("g").className="btn g";
+document.getElementById(id).className="btn "+id+"-clicked";
+if(id=="a"){
+var url=new Array("https://gitblock.cn/users/1160622","https://aerfaying.com/users/1160622","https://github.com/yangrou9999tfgs","https://scratch.mit.edu/users/yangrou","https://www.scratch-cn.cn/user/project?comid=62df4d37e603ce03dca9f00c","https://40code.com/#page=user&id=899","https://www.ccw.site/student/630707b056cb8e35078d4ea3","https://world.xiaomawang.com/w/person/project/all/3476418","https://space.bilibili.com/23541925","https://www.ixigua.com/home/1797015339271891?list_entrance=userdetail","https://greasyfork.org/zh-CN/users/1025139-yangrou","https://gitlab.com/yangrou","https://gitee.com/yangroutfgs","https://www.zhihu.com/people/axolotl-68");
+var a=new Array("稽木世界","阿儿法营","github","Scratch官网","Scratch中社（蛙卡）","40code","ccw","小码王","BiliBili","西瓜视频","Greasy Fork","gitlab","gitee","知乎");
+var i=0;
+content.innerHTML="<p class='title-2'>yangrou账号</p><ul id='menu'></ul>";
+while(i<url.length){
+menu.innerHTML+="<li><a class='a-menu' href='"+url[i]+"'>"+a[i]+"</span></a></li>";
+i++;
+}
+content.innerHTML+="<p class='title-2'>yangrou联系方式</p><ul id='menu'><li>QQ：<a class='a-menu' href='http://wpa.qq.com/msgrd?v=3&uin=2605884507&site=qq&menu=yes'>2605884507</a></li><li><a class='a-menu' href='https://im.popoim.com/im/web'>泡泡</a>：yangrou</li></ul>";
+}else if(id=="b"){
+var url=new Array("wiki/Eglish.html");
+var b=new Array("<div class='original tag-2'>原创</div>");
+var a=new Array("关于Eglish");
+var i=0;
+content.innerHTML="<p class='title-2'>百科</p><ul id='menu'></ul>";
+while(i<url.length){
+menu.innerHTML+="<li>"+b[i]+"<a class='a-menu' href='"+url[i]+"'>"+a[i]+"</span></a></li>";
+i++;
+}
+}else if(id=="c"){
+var url=new Array("games/tfgs.html","games/Jalje Kong Huan City.html");
+var a=new Array("网页版tfgs","Jalje Kong Huan City");
+var i=0;
+content.innerHTML="<p class='title-2'>游戏</p><ul id='menu'></ul>";
+while(i<url.length){
+menu.innerHTML+="<li><a class='a-menu' href='"+url[i]+"'>"+a[i]+"</span></a></li>";
+i++;
+}
+}else if(id=="d"){
+var url=new Array("https://gitblock.cn/Projects/512945","https://gitblock.cn/Studios/65834","https://im.popoim.com/im/web","https://convertio.co/zh","https://isolator.saobby.tk/","https://zengyulin.cn/TFGS/");
+var a=new Array("SJA分析器","阿儿法营生物研究所","泡泡","文件转换","阿儿法营路障查询机","zyl的TFGS百科");
+var i=0;
+content.innerHTML="<p class='title-2'>推荐</p><ul id='menu'></ul>";
+while(i<url.length){
+menu.innerHTML+="<li><a class='a-menu' href='"+url[i]+"'>"+a[i]+"</span></a></li>";
+i++;
+}
+}else if(id=="e"){
+content.innerHTML="<center><b style='font-size:33px;margin:12px;'>暂无</b></center>";
+}else if(id=="f"){
+var url=new Array("https://www.saobby.com","http://talktome.gtrees.top");
+var a=new Array("saobby的主页","Gtd论坛（正在搭建）");
+var i=0;
+content.innerHTML="<p class='title-2'>友站</p><ul id='menu'></ul><p>太少了，可以给我稽木号留言申请加入友站。</p>";
+while(i<url.length){
+menu.innerHTML+="<li><a class='a-menu' href='"+url[i]+"'>"+a[i]+"</span></a></li>";
+i++;
+}
+}else if(id=="g"){
+content.innerHTML="<p class='title-2'>视频</p><video width='720' height='360' controls=''><source src='videos/不要啊.mp4'></video><br><i style='font-size:17px;color:#585858'>转载自SYS_Admin</i><br><br><br><p class='title-2'>图片</p><img src='images/img1.png' style='margin:20px;'><br><img src='images/img2.jpg' height='700' style='margin:20px;'>";
+}
+}
+</script>
+</div>
+<script>change('a');</script>
+</body>
+</html>
