@@ -225,8 +225,10 @@ if(e<6){
 time="凌晨";
 }else if(e<9){
 time="早上";
-}else if(e<12){
+}else if(e<11){
 time="上午";
+}else if(e<14){
+time="中午";
 }else if(e<18){
 time="下午";
 }else if(e<20){
@@ -305,8 +307,8 @@ menu.innerHTML+="<li><a class='a-menu' href='"+url[i]+"'>"+a[i]+"</span></a></li
 i++;
 }
 }else if(id=="d"){
-var url=new Array("https://gitblock.cn/Projects/512945","https://gitblock.cn/Studios/65834","https://im.popoim.com/im/web","https://convertio.co/zh","https://isolator.saobby.tk/","https://zengyulin.cn/TFGS/");
-var a=new Array("SJA分析器","阿儿法营生物研究所","泡泡","文件转换","阿儿法营路障查询机","zyl的TFGS百科");
+var url=new Array("https://gitblock.cn/Projects/512945","https://gitblock.cn/Studios/65834","https://im.popoim.com/im/web","https://convertio.co/zh","https://isolator.saobby.tk/","https://zengyulin.cn/TFGS/","https://sheeptester.github.io/","https://scratchblocks.github.io/#?style=scratch3&script=");
+var a=new Array("SJA分析器","阿儿法营生物研究所","泡泡","文件转换","阿儿法营路障查询机","zyl的TFGS百科","绵羊实验室","ScratchBlocks编辑器");
 var i=0;
 content.innerHTML="<p class='title-2'>推荐</p><ul id='menu'></ul>";
 while(i<url.length){
