@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>暴力24点</title>
+        <meta charset="utf-8" />
+        <script src="main.js"></script>
+        <script src="jquery.js"></script>
+        <style>
+            #error{
+                color:red;
+            }
+        </style>
+        <script>
+            function add(){
+                $("#list").append("<li><input type='text' /> <input type='button' value='delete' onclick='this.parentNode.remove();' /></li>");
+            }
+            function result(){
+                match=$("li input[type='text']");
+                args=[[],$("input#count")[0].value];
+                for(let i=0;i<match.length;i++){
+                    if(isNaN(Number(match[i].value))){
+                        err("请输入正确数字");
+                        return;
+                    }
+                    args[0].push(Number(match[i].value));
+                }
+                log(make24(args));
+            }
+            function err(value){
+                $("#error").text(value);
+            }
+            function log(arr){
+                $("#result").html(`<ul><li>${arr.join("</li><li>")}</li></ul>`);
+            }
+        </script>
+    </head>
+    <body>
+        <p>Scratch：<a href="//gitblock.cn/Projects/1216906">gitblock</a>,<a href="//aerfaying.com/Projects/1216906">aerfaying</a></p>
+        <ol id="list">
+            <li><input type='text' /> <input type='button' value='delete' onclick='this.parentNode.remove();' /></li>
+            <li><input type='text' /> <input type='button' value='delete' onclick='this.parentNode.remove();' /></li>
+            <li><input type='text' /> <input type='button' value='delete' onclick='this.parentNode.remove();' /></li>
+            <li><input type='text' /> <input type='button' value='delete' onclick='this.parentNode.remove();' /></li>
+        </ol>
+        <p>得数：<input type="text" id="count" value="24"></p>
+        <input type="button" value="增加" onclick="add();" /> 
+        <input type="button" value="得出结果" onclick="result();" /> 
+        <span id="error"></span>
+        <div id="result"></div>
+    </body>
+</html>
