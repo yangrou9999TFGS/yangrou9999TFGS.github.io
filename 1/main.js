@@ -5,55 +5,33 @@
 |*|license: MIT
 \*/
 
-class Formula{
-    // 此类用于将算式转换成字符串
-    constructor(sym,a,b){
-        this.sym=sym;   // 符号
-        this.a=a;       // 左
-        this.b=b;       // 右
-    }
-    toString(){ // 转字符串
-        return '('+this.a.toString()+this.sym+this.b.toString()+')';
-        // 不确定优先级，所以加上括号
-    }
-}
-Array.prototype.del=function(index){
-    // 在不改变数组的情况下删除某一元素
-    // splice会改变数组，temp=arr,temp.splice也会改变数组arr
-    let temp=[];
-    for(let i in this){
-        if(i!=index)temp.push(this[i]);
-    }
-    return temp.slice(0,-1);
-    // 执行for in时，temp会多出一个函数（其实是del方法本身），懒，直接用slice截取
-}
-function stack(str){
-    // 将前缀表达式用栈的方法运算为一个数字或一个数组（前缀表达式不正确时）
-    let arr=[],ele=str.split(' ');
-    for(let i=0;i<ele.length;i++){
-        arr.push(ele[i]);
-        while('+-*/'.includes(arr[arr.length-3])&&!isNaN(Number(arr[arr.length-2]))&&!isNaN(Number(arr[arr.length-1]))){
-            arr.splice(-3,3,eval('('+arr[arr.length-2]+')'+arr[arr.length-3]+'('+arr[arr.length-1]+')'));
-            // 使用eval时数加上括号运算，有可能出现一个数减去一个负数报错（如2--1是错误的）
-        }
-    }
-    return arr.length==1?arr[0]:arr;
-    // 如果栈内元素数量为1，返回元素，否则返回数组
-}
-function stack2(str){
-    // 将前缀表达式转换成Formula类
-    // 和stack差不多，但判断数字时也要判断一下Formula类
-    let arr=[],ele=str.split(' ');
-    for(let i=0;i<ele.length;i++){
-        arr.push(ele[i]);
-        while('+-*/'.includes(arr[arr.length-3])&&(!isNaN(Number(arr[arr.length-2]))||arr[arr.length-2].constructor==Formula)&&(!isNaN(Number(arr[arr.length-1]))||arr[arr.length-1].constructor==Formula)){
-            arr.splice(-3,3,new Formula(arr[arr.length-3],arr[arr.length-2],arr[arr.length-1]));
-        }
-    }
-    return arr[0];
-}
 function make24([values,count]){
     // 程序入口，values为数值，count为得数
+    function stack(str){
+        // 将前缀表达式用栈的方法运算为一个数字或一个数组（前缀表达式不正确时）
+        let arr=[],ele=str.split(' ');
+        for(let i=0;i<ele.length;i++){
+            arr.push(ele[i]);
+            while('+-*/'.includes(arr[arr.length-3])&&!isNaN(Number(arr[arr.length-2]))&&!isNaN(Number(arr[arr.length-1]))){
+                arr.splice(-3,3,eval('('+arr[arr.length-2]+')'+arr[arr.length-3]+'('+arr[arr.length-1]+')'));
+                // 使用eval时数加上括号运算，有可能出现一个数减去一个负数报错（如2--1是错误的）
+            }
+        }
+        return arr.length==1?arr[0]:arr;
+        // 如果栈内元素数量为1，返回元素，否则返回数组
+    }
+    function stack2(str){
+        // 将前缀表达式转换成表达类
+        // 和stack差不多，但判断数字时也要判断一下表达式类
+        let arr=[],ele=str.split(' ');
+        for(let i=0;i<ele.length;i++){
+            arr.push(ele[i]);
+            while('+-*/'.includes(arr[arr.length-3])&&(!isNaN(Number(arr[arr.length-2]))||arr[arr.length-2].length>1)&&(!isNaN(Number(arr[arr.length-1]))||arr[arr.length-1].length>1)){
+                arr.splice(-3,3,`(${arr[arr.length-2]}${arr[arr.length-3]}${arr[arr.length-1]})`);
+            }
+        }
+        return arr[0].slice(1,-1);
+    }
     let all=new Set();  // 去重，使用Set方便
     (function orders(prevArr,newArr){
         // 递归做出全排序，符号用#代替
@@ -64,7 +42,17 @@ function make24([values,count]){
             return;
         }
         for(let i=0;i<newArr.length;i++){
-            if(prevArr!=''||newArr[i]=='#')orders(prevArr+newArr[i]+" ",newArr.del(i));
+            if(prevArr!=''||newArr[i]=='#')orders(prevArr+newArr[i]+" ",(
+                function(index){
+                    // 在不改变数组的情况下删除某一元素
+                    // splice会改变数组，temp=arr,temp.splice也会改变数组arr
+                    let temp=[];
+                    for(let i=0;i<newArr.length;i++){
+                        if(i!=index)temp.push(newArr[i]);
+                    }
+                    return temp;
+                })(i)
+            );
             // 递归下去，要注意，第一位必须为#
         }
     })('',values.concat('#'.repeat(values.length-1).split('')));
@@ -91,7 +79,7 @@ function make24([values,count]){
     }
     for(let i=0;i<data2.length;i++){
         if(stack(data2[i])==count){ // 判断得数是否为count
-            data3.push(stack2(data2[i]).toString().slice(1,-1));
+            data3.push(stack2(data2[i]));
             // 因为外面有一个多余的括号，所以需要slice
         }
     }
