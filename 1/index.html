@@ -4,32 +4,39 @@
         <title>暴力24点</title>
         <meta charset="utf-8" />
         <script src="main.min.js"></script>
-        <!--未压缩版main.js，规范版main.norm.js-->
+        <!--未压缩版main.js-->
         <script src="jquery.js"></script>
         <style>
-            #error{
-                color:red;
+            #error {
+                color : red;
             }
         </style>
         <script>
-            function add(){
+            function add () {
                 $("#list").append("<li><input type='text' /> <input type='button' value='delete' onclick='this.parentNode.remove();' /></li>");
             }
-            function result(){
-                match=$("li input[type='text']");
-                args=[[],$("input#count")[0].value];
-                for(let i=0;i<match.length;i++){
-                    if(isNaN(Number(match[i].value))){
+
+            function result () {
+                let match = $("li input[type='text']");
+                let args = [[], $("input#count")[0].value];
+                for (let i = 0; i < match.length; i++) {
+                    if (isNaN(+match[i].value)) {
                         err("请输入正确数字");
                         return;
                     }
-                    args[0].push(Number(match[i].value));
+                    args[0].push(+match[i].value);
                 }
-                log(make24(args));
+                try {
+                    log(make24(...args));
+                } catch (e) {
+                    err(e.message);
+                }
             }
+
             function err(value){
                 $("#error").text(value);
             }
+
             function log(arr){
                 $("#result").html(`<ul><li>${arr.join("</li><li>")}</li></ul>`);
             }
